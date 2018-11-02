@@ -62,4 +62,4 @@ jobs:
           name: Deploy to Now
           command: |
             $NOW --token=$ZEIT_TOKEN --public
-            $NOW --token-$ZEIT_TOKEN alias timkuminecz.com
+            $NOW --token=$ZEIT_TOKEN alias timkuminecz.com
