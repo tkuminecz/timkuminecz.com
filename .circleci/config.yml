@@ -22,12 +22,13 @@ workflows:
           requires:
             - test
       - deploy:
+          context: org-global
           requires:
             - build
-          # filters:
-          #   branches:
-          #     only:
-          #       - master
+          filters:
+            branches:
+              only:
+                - master
 
 jobs:
   test:
