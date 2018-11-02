@@ -1,0 +1,61 @@
+version: 2
+
+config:
+  docker: &docker
+    - image: circleci/node:8
+
+  saveCache: &saveCache
+    key: v1-npm-{{ .Branch }}-{{ checksum "yarn.lock" }}
+    paths:
+      - node_modules
+
+  restoreCache: &restoreCache
+    keys:
+      - v1-npm-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+workflows:
+  version: 2
+  test_and_build:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+
+jobs:
+  test:
+    docker: *docker
+    steps:
+      - checkout
+      - restore_cache: *restoreCache
+      - run: yarn install
+      - save_cache: *saveCache
+      - run: yarn test
+
+  build:
+    docker: *docker
+    steps:
+      - checkout
+      - restore_cache: *restoreCache
+      - run: yarn install
+      - save_cache: *saveCache
+      - run: yarn build
+
+  deploy:
+    docker: *docker
+    steps:
+      - run:
+          name: Install Now CLI
+          command: yarn global add now
+      - deploy:
+          name: Deploy to Now
+          command: |
+            now --token $ZEIT_TOKEN
+            now alias timkuminecz.com
