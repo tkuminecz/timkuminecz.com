@@ -11,7 +11,9 @@
     "dev": "next src",
     "build": "next build src",
     "lint": "tslint --project .",
-    "start": "next start src"
+    "start": "next start src",
+    "test": "npm-run-all lint typecheck",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@zeit/next-typescript": "^1.1.1",
