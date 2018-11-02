@@ -50,9 +50,11 @@ jobs:
 
   deploy:
     docker: *docker
+    environment:
+      NOW: ./node_modules/.bin/now
     steps:
       - deploy:
           name: Deploy to Now
           command: |
-            now --token $ZEIT_TOKEN
-            now alias timkuminecz.com
+            $NOW --token $ZEIT_TOKEN
+            $NOW alias timkuminecz.com
