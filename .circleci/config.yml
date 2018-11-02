@@ -24,10 +24,10 @@ workflows:
       - deploy:
           requires:
             - build
-          filters:
-            branches:
-              only:
-                - master
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
 
 jobs:
   test:
@@ -53,6 +53,10 @@ jobs:
     environment:
       NOW: ./node_modules/.bin/now
     steps:
+      - checkout
+      - restore_cache: *restoreCache
+      - run: yarn install
+      - save_cache: *saveCache
       - deploy:
           name: Deploy to Now
           command: |
