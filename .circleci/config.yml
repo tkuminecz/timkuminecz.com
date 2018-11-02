@@ -11,7 +11,7 @@ config:
 
   restoreCache: &restoreCache
     keys:
-      - v1-npm-{{ .Branch }}-{{ checksum "package.json" }}
+      - v1-npm-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
 workflows:
   version: 2
