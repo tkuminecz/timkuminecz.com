@@ -51,9 +51,6 @@ jobs:
   deploy:
     docker: *docker
     steps:
-      - run:
-          name: Install Now CLI
-          command: yarn global add now
       - deploy:
           name: Deploy to Now
           command: |
