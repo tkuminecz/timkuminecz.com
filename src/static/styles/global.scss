@@ -1,6 +1,7 @@
 @import 'colors';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 
 html, body {
   color: $black;
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
