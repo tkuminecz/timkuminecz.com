@@ -16,17 +16,18 @@ config:
 workflows:
   version: 2
   test_and_build:
-    - test
-    - build:
-        requires:
-          - test
-    - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only:
-              - master
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
 
 jobs:
   test:
