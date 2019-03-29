@@ -8,12 +8,12 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "dev": "next src",
-    "build": "next build src",
-    "lint": "tslint --project .",
-    "start": "next start src",
-    "test": "npm-run-all lint typecheck",
-    "typecheck": "tsc --noEmit"
+    "dev": "npx next src",
+    "build": "npx next build src",
+    "lint": "npx tslint --project .",
+    "start": "npx next start src",
+    "test": "npx npm-run-all lint typecheck",
+    "typecheck": "npx tsc --noEmit --pretty"
   },
   "dependencies": {
     "@zeit/next-typescript": "^1.1.1",
