@@ -1,5 +1,7 @@
 {
-  "alias": [
-    "timkuminecz.com"
+  "version": 2,
+  "alias": ["timkuminecz.com"],
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build" }
   ]
 }
