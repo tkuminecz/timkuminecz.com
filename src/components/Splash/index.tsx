@@ -5,7 +5,6 @@ const Nav = () => (
   <nav className={styles.nav}>
     <ul>
       <li><a href='https://resume.timkuminecz.com'>Resume</a></li>
-      <li><a href='https://projects.timkuminecz.com'>Projects</a></li>
       <li><a href='https://github.com/tkuminecz'>Github</a></li>
     </ul>
   </nav>

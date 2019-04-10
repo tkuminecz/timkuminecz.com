@@ -11,6 +11,7 @@
     "dev": "npx next src",
     "build": "npx next build src",
     "lint": "npx tslint --project .",
+    "now-build": "npm run build && npx next export src -o dist",
     "start": "npx next start src",
     "test": "npx npm-run-all lint typecheck",
     "typecheck": "npx tsc --noEmit --pretty"
@@ -21,6 +22,7 @@
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
+    "@types/next": "^8.0.3",
     "@types/node": "^10.12.2",
     "@types/react": "^16.4.18",
     "@zeit/next-sass": "^1.0.1",
