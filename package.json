@@ -14,12 +14,15 @@
     "now-build": "npm run build && npx next export src -o dist",
     "start": "npx next start src",
     "test": "npx npm-run-all lint typecheck",
-    "typecheck": "npx tsc --noEmit --pretty"
+    "typecheck": "npx tsc --noEmit --pretty",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "next": "^7.0.2",
+    "next": "^9.3.2",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "snyk": "^1.361.3"
   },
   "devDependencies": {
     "@types/next": "^8.0.3",
@@ -35,5 +38,6 @@
     "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.1.6"
-  }
+  },
+  "snyk": true
 }
