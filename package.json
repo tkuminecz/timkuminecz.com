@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "next": "^7.0.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@types/next": "^8.0.3",
