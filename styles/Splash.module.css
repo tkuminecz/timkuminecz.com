@@ -1,0 +1,40 @@
+.nav {
+  text-align: center;
+}
+
+.nav ul {
+  padding: 0;
+}
+
+.nav ul li {
+  display: inline;
+  list-style-type: none;
+  margin: 0 1rem;
+}
+
+.nav ul li a {
+  color: #999;
+  font-weight: 200;
+  text-decoration: none;
+  transition: color linear 200ms;
+}
+.nav ul li a:hover {
+  color: #444;
+}
+
+.splash {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+}
+
+.splash h1 {
+  font-weight: 400;
+}
+
+.splash h1 .lighter {
+  color: #aaa;
+  font-weight: 300;
+}
